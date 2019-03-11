@@ -1,0 +1,257 @@
+@prefix : <http://www.semanticweb.org/c1544657/ontologies/2017/10/untitled-ontology-19#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/c1544657/ontologies/2017/10/untitled-ontology-19> .
+
+<http://www.semanticweb.org/c1544657/ontologies/2017/10/untitled-ontology-19> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasChild
+
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasAge
+
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Adult
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Adult> rdf:type owl:Class ;
+                                                                                
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person> .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Child
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Child> rdf:type owl:Class ;
+                                                                                
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person> .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Father
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Father> rdf:type owl:Class ;
+                                                                                 
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#MalePerson> ,
+                                                                                                 <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Parent> ;
+                                                                                 
+                                                                                 owl:disjointWith <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#FemalePerson> ,
+                                                                                                  <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Grandmother> ,
+                                                                                                  <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Mother> .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#FemalePerson
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#FemalePerson> rdf:type owl:Class ;
+                                                                                       
+                                                                                       rdfs:subClassOf <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Adult> ;
+                                                                                       
+                                                                                       owl:disjointWith <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#MalePerson> .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Grandmother
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Grandmother> rdf:type owl:Class ;
+                                                                                      
+                                                                                      rdfs:subClassOf <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Mother> ;
+                                                                                      
+                                                                                      owl:disjointWith <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#MalePerson> .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#MalePerson
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#MalePerson> rdf:type owl:Class ;
+                                                                                     
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person> ;
+                                                                                     
+                                                                                     owl:disjointWith <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Mother> .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Mother
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Mother> rdf:type owl:Class ;
+                                                                                 
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#FemalePerson> ,
+                                                                                                 <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Parent> .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Parent
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Parent> rdf:type owl:Class ;
+                                                                                 
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person> .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#ParentOfAnAdult
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#ParentOfAnAdult> rdf:type owl:Class ;
+                                                                                          
+                                                                                          rdfs:subClassOf <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Parent> .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person> rdf:type owl:Class .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Teenager
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Teenager> rdf:type owl:Class ;
+                                                                                   
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person> .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Jacob
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Jacob> rdf:type <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Child> ,
+                                                                                         <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#MalePerson> ,
+                                                                                         <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person> ,
+                                                                                         owl:NamedIndividual ;
+                                                                                
+                                                                                <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasAge> 5 .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Jemima
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Jemima> rdf:type <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Adult> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#FemalePerson> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Grandmother> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Mother> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Parent> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#ParentOfAnAdult> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person> ,
+                                                                                          owl:NamedIndividual ;
+                                                                                 
+                                                                                 <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasAge> 72 ;
+                                                                                 
+                                                                                 <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasChild> <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Joanna> ,
+                                                                                                                                                                    <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Joel> .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Jeremiah
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Jeremiah> rdf:type <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Adult> ,
+                                                                                            <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#MalePerson> ,
+                                                                                            <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person> ,
+                                                                                            owl:NamedIndividual ;
+                                                                                   
+                                                                                   <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasAge> 23 .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Joanna
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Joanna> rdf:type <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Adult> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#FemalePerson> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Mother> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Parent> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#ParentOfAnAdult> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person> ,
+                                                                                          owl:NamedIndividual ;
+                                                                                 
+                                                                                 <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasAge> 42 ;
+                                                                                 
+                                                                                 <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasChild> <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Jeremiah> ,
+                                                                                                                                                                    <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Judith> .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Joel
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Joel> rdf:type <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Adult> ,
+                                                                                        <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Father> ,
+                                                                                        <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#MalePerson> ,
+                                                                                        <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Parent> ,
+                                                                                        <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person> ,
+                                                                                        owl:NamedIndividual ;
+                                                                               
+                                                                               <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasAge> 38 ;
+                                                                               
+                                                                               <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasChild> <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Jacob> .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#John
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#John> rdf:type <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Adult> ,
+                                                                                        <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Father> ,
+                                                                                        <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#MalePerson> ,
+                                                                                        <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Parent> ,
+                                                                                        <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#ParentOfAnAdult> ,
+                                                                                        <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person> ,
+                                                                                        owl:NamedIndividual ;
+                                                                               
+                                                                               <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasAge> 73 ;
+                                                                               
+                                                                               <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasChild> <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Joanna> ,
+                                                                                                                                                                  <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Joel> .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Judith
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Judith> rdf:type <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Adult> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#FemalePerson> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person> ,
+                                                                                          <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Teenager> ,
+                                                                                          owl:NamedIndividual ;
+                                                                                 
+                                                                                 <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasAge> 19 .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+

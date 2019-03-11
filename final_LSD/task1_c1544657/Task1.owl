@@ -1,0 +1,314 @@
+@prefix : <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9> .
+
+<http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9> rdf:type owl:Ontology .
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasChild
+
+:hasChild rdf:type owl:ObjectProperty ;
+          
+          rdfs:domain :Person ;
+          
+          rdfs:range :Person .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#hasAge
+
+:hasAge rdf:type owl:DatatypeProperty ;
+        
+        rdfs:domain :Person ;
+        
+        rdfs:range xsd:integer .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Adult
+
+:Adult rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAge ;
+                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                  owl:onDatatype xsd:integer ;
+                                                  owl:withRestrictions ( [ xsd:minInclusive 18
+                                                                         ]
+                                                                       )
+                                                ]
+                           ] .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Child
+
+:Child rdf:type owl:Class ;
+       
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAge ;
+                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                  owl:onDatatype xsd:integer ;
+                                                  owl:withRestrictions ( [ xsd:maxExclusive 18
+                                                                         ]
+                                                                       )
+                                                ]
+                           ] .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Father
+
+:Father rdf:type owl:Class ;
+        
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:intersectionOf ( :MalePerson
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasChild ;
+                                                     owl:someValuesFrom :Person
+                                                   ]
+                                                 )
+                            ] .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#FemalePerson
+
+:FemalePerson rdf:type owl:Class ;
+              
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:oneOf ( :Joanna
+                                                :Judith
+                                                :Jemima
+                                              )
+                                  ] ;
+              
+              rdfs:subClassOf :Person .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Grandmother
+
+:Grandmother rdf:type owl:Class ;
+             
+             owl:equivalentClass [ rdf:type owl:Class ;
+                                   owl:intersectionOf ( :Mother
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :hasChild ;
+                                                          owl:someValuesFrom :Parent
+                                                        ]
+                                                      )
+                                 ] .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#MalePerson
+
+:MalePerson rdf:type owl:Class ;
+            
+            owl:equivalentClass [ rdf:type owl:Class ;
+                                  owl:oneOf ( :Jacob
+                                              :Jeremiah
+                                              :John
+                                              :Joel
+                                            )
+                                ] ;
+            
+            rdfs:subClassOf :Person .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Mother
+
+:Mother rdf:type owl:Class ;
+        
+        owl:equivalentClass [ rdf:type owl:Class ;
+                              owl:intersectionOf ( :FemalePerson
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasChild ;
+                                                     owl:someValuesFrom :Person
+                                                   ]
+                                                 )
+                            ] .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Parent
+
+:Parent rdf:type owl:Class ;
+        
+        owl:disjointUnionOf ( :Father
+                              :Mother
+                            ) .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#ParentOfAnAdult
+
+:ParentOfAnAdult rdf:type owl:Class ;
+                 
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasChild ;
+                                       owl:someValuesFrom :Adult
+                                     ] .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Person
+
+:Person rdf:type owl:Class ;
+        
+        owl:disjointUnionOf ( :FemalePerson
+                              :MalePerson
+                            ) .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Teenager
+
+:Teenager rdf:type owl:Class ;
+          
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAge ;
+                                owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                     owl:onDatatype xsd:integer ;
+                                                     owl:withRestrictions ( [ xsd:minInclusive 13
+                                                                            ]
+                                                                            [ xsd:maxInclusive 19
+                                                                            ]
+                                                                          )
+                                                   ]
+                              ] .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Jacob
+
+:Jacob rdf:type owl:NamedIndividual ;
+       
+       :hasAge 5 .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Jemima
+
+:Jemima rdf:type owl:NamedIndividual ;
+        
+        :hasAge 72 ;
+        
+        :hasChild :Joanna ,
+                  :Joel .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Jeremiah
+
+:Jeremiah rdf:type owl:NamedIndividual ;
+          
+          :hasAge 23 .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Joanna
+
+:Joanna rdf:type owl:NamedIndividual ;
+        
+        :hasAge 42 ;
+        
+        :hasChild :Jeremiah ,
+                  :Judith .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Joel
+
+:Joel rdf:type owl:NamedIndividual ;
+      
+      :hasAge 38 ;
+      
+      :hasChild :Jacob .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#John
+
+:John rdf:type owl:NamedIndividual ;
+      
+      :hasAge 73 ;
+      
+      :hasChild :Joanna ,
+                :Joel .
+
+
+
+###  http://www.semanticweb.org/andrew/ontologies/2016/9/untitled-ontology-9#Judith
+
+:Judith rdf:type owl:NamedIndividual ;
+        
+        :hasAge 19 .
+
+
+
+
+
+#################################################################
+#
+#    General axioms
+#
+#################################################################
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Jacob
+                        :Jemima
+                        :Jeremiah
+                        :Joanna
+                        :Joel
+                        :John
+                        :Judith
+                      )
+] .
+
+
+
+
+###  Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net
+
